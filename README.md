@@ -1,1 +1,1 @@
-Building Web App with PyQt5
+Building Web App with PyQt5 Framework
