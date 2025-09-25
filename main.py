@@ -38,7 +38,7 @@ master_layout.addLayout(row_3)
 main_window.setLayout(master_layout)
 
 # create Functions
-def random_word_1():
+def random_word():
     text_1.setText(choice(word_list))
     text_2.setText(choice(word_list))
 def eraser():
@@ -46,7 +46,7 @@ def eraser():
     text_2.setText('?')
 
 # Events
-button_1.clicked.connect(random_word_1)
+button_1.clicked.connect(random_word)
 button_2.clicked.connect(eraser)
 
 # Show/Run The App
