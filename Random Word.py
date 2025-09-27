@@ -37,7 +37,7 @@ master_layout.addLayout(row_3)
 
 main_window.setLayout(master_layout)
 
-# create Functions
+# Create Functions
 def random_word():
     text_1.setText(choice(word_list))
     text_2.setText(choice(word_list))
