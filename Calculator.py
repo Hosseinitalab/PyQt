@@ -8,7 +8,7 @@ class CalcApp(QWidget):
         self.setWindowTitle('Calculator App')
         self.resize(250, 300)
 
-        # Create All App Objects
+        #  Create All App Objects
         self.result = QLineEdit()
         self.grid = QGridLayout()
         buttons = [
