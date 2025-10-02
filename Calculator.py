@@ -7,7 +7,7 @@ class CalcApp(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle('Calculator App')
-        self.resize(250, 300)
+        self.resize(400, 300)
 
         # Design
         self.result = QLineEdit()
