@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QGridLayout
+from PyQt5.QtGui import QFont
 
 class CalcApp(QWidget):
     """ Calculator Class """
@@ -10,9 +11,13 @@ class CalcApp(QWidget):
 
         # Design
         self.result = QLineEdit()
+        self.result.setFont(QFont("Helvetica", 25))
+        self.result.setStyleSheet("QLineEdit { background-color: green; color: white}")
         self.grid = QGridLayout()
         self.clear = QPushButton('Clear')
         self.delete = QPushButton('<')
+        self.clear.setStyleSheet("QPushButton { font: 17pt Comic Sans Ms; padding: 10px; background-color: orange }")
+        self.delete.setStyleSheet("QPushButton { font: 17pt Comic Sans Ms; padding: 10px; background-color: orange }")
         self.button()
 
         # Layout
@@ -23,6 +28,7 @@ class CalcApp(QWidget):
         button_row.addWidget(self.clear)
         button_row.addWidget(self.delete)
         master_layout.addLayout(button_row)
+        master_layout.setContentsMargins(25, 25, 25, 25)
         self.setLayout(master_layout)
 
         # Events
@@ -43,6 +49,7 @@ class CalcApp(QWidget):
         for text in buttons:
             button = QPushButton(text)
             button.clicked.connect(self.button_click)
+            button.setStyleSheet("QPushButton { font: 17pt Comic Sans Ms; padding: 10px; }")
             self.grid.addWidget(button, row, col)
             col += 1
             if col > 3:
@@ -75,5 +82,6 @@ class CalcApp(QWidget):
 if __name__ == '__main__':
     app = QApplication([])
     main_window = CalcApp()
+    main_window.setStyleSheet("QWidget {background-color: white}")
     main_window.show()
     app.exec_()
